@@ -1,5 +1,5 @@
-const CACHE_NAME = 'compras-ia-cache-v2'; // Versão do cache atualizada
-const URLS_TO_CACHE = [
+const CACHE_NAME = 'compras-ia-cache-v3'; // Versão do cache incrementada para forçar atualização
+const APP_SHELL_URLS = [
   '/',
   '/index.html',
   '/index.tsx',
@@ -8,11 +8,7 @@ const URLS_TO_CACHE = [
   '/components/Header.tsx',
   '/components/ListaDeCompras.tsx',
   '/components/ItemDaLista.tsx',
-  '/components/AdicionarItemForm.tsx',
-  '/components/BotaoInstalar.tsx',
-  'https://cdn.tailwindcss.com',
-  'https://aistudiocdn.com/react@^19.2.0',
-  'https://aistudiocdn.com/react-dom@^19.2.0/'
+  '/components/AdicionarItemForm.tsx'
 ];
 
 // Instala o Service Worker e armazena os arquivos do app shell em cache.
@@ -20,8 +16,10 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Cache aberto e salvando arquivos essenciais.');
-        return cache.addAll(URLS_TO_CACHE);
+        console.log('Cache aberto e salvando arquivos do App Shell.');
+        // Adiciona todos os arquivos essenciais do app.
+        // URLs externas como CDNs serão cacheadas dinamicamente no evento 'fetch'.
+        return cache.addAll(APP_SHELL_URLS);
       })
   );
 });
@@ -46,12 +44,14 @@ self.addEventListener('activate', event => {
 
 // Intercepta as requisições de rede.
 self.addEventListener('fetch', event => {
-  // Ignora requisições que não são GET.
+  // Ignora requisições que não são GET ou são de extensões do chrome.
   if (event.request.method !== 'GET' || event.request.url.startsWith('chrome-extension://')) {
     return;
   }
   
-  // Estratégia: Cache, caindo para a rede (Cache first, then network)
+  // Estratégia: Cache, e se falhar, busca na rede (Cache falling back to network)
+  // Para recursos do app, isso os torna offline.
+  // Para recursos externos (CDNs), isso os armazena em cache após o primeiro download.
   event.respondWith(
     caches.match(event.request)
       .then(cachedResponse => {
@@ -60,20 +60,26 @@ self.addEventListener('fetch', event => {
           return cachedResponse;
         }
 
-        // Se não, busca na rede, clona e armazena no cache.
+        // Se não, busca na rede.
         return fetch(event.request).then(
           networkResponse => {
-            if (networkResponse && networkResponse.status === 200) {
-              const responseToCache = networkResponse.clone();
-              caches.open(CACHE_NAME)
-                .then(cache => {
-                  cache.put(event.request, responseToCache);
-                });
+            // Verifica se a resposta é válida
+            if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic' && networkResponse.type !== 'cors') {
+              return networkResponse;
             }
+
+            // Clona a resposta para poder armazená-la no cache e retorná-la ao navegador.
+            const responseToCache = networkResponse.clone();
+            
+            caches.open(CACHE_NAME)
+              .then(cache => {
+                cache.put(event.request, responseToCache);
+              });
+            
             return networkResponse;
           }
         ).catch(error => {
-            console.error('Falha na busca pela rede e item não está no cache.', error);
+            console.error('Falha na busca pela rede e o item não está no cache:', error);
             // Opcional: Retornar uma página offline de fallback aqui.
         });
       })
