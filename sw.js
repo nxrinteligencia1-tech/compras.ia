@@ -1,9 +1,18 @@
-const CACHE_NAME = 'compras-ia-cache-v1';
+const CACHE_NAME = 'compras-ia-cache-v2'; // Versão do cache atualizada
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
   '/index.tsx',
-  'https://cdn.tailwindcss.com'
+  '/App.tsx',
+  '/types.ts',
+  '/components/Header.tsx',
+  '/components/ListaDeCompras.tsx',
+  '/components/ItemDaLista.tsx',
+  '/components/AdicionarItemForm.tsx',
+  '/components/BotaoInstalar.tsx',
+  'https://cdn.tailwindcss.com',
+  'https://aistudiocdn.com/react@^19.2.0',
+  'https://aistudiocdn.com/react-dom@^19.2.0/'
 ];
 
 // Instala o Service Worker e armazena os arquivos do app shell em cache.
@@ -11,7 +20,7 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Cache aberto');
+        console.log('Cache aberto e salvando arquivos essenciais.');
         return cache.addAll(URLS_TO_CACHE);
       })
   );
@@ -38,7 +47,7 @@ self.addEventListener('activate', event => {
 // Intercepta as requisições de rede.
 self.addEventListener('fetch', event => {
   // Ignora requisições que não são GET.
-  if (event.request.method !== 'GET') {
+  if (event.request.method !== 'GET' || event.request.url.startsWith('chrome-extension://')) {
     return;
   }
   
@@ -51,10 +60,9 @@ self.addEventListener('fetch', event => {
           return cachedResponse;
         }
 
-        // Se não, busca na rede.
+        // Se não, busca na rede, clona e armazena no cache.
         return fetch(event.request).then(
           networkResponse => {
-            // Se a requisição for bem-sucedida, clona e armazena no cache.
             if (networkResponse && networkResponse.status === 200) {
               const responseToCache = networkResponse.clone();
               caches.open(CACHE_NAME)
@@ -62,7 +70,6 @@ self.addEventListener('fetch', event => {
                   cache.put(event.request, responseToCache);
                 });
             }
-            // Retorna a resposta da rede.
             return networkResponse;
           }
         ).catch(error => {

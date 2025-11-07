@@ -4,14 +4,14 @@
   "description": "Um bloco de notas simples e minimalista para sua lista de compras. Adicione, marque como comprado e remova itens com facilidade.",
   "icons": [
     {
-      "src": "/icons/icon-192x192.png",
-      "type": "image/png",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iIzA1OTY2OSI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMjIuNSAzSDFsMS4zODYgLjk1NUwxLjA4NyAuODM1bC4zODMgMS40MzdNNy41IDE0LjI1YTMgMyAwIDAgMC0zIDNoMTUuNzVtLTEyLjc1LTNoMTEuMjE4Yy41MSAwIC45NjItLjM0NCAxLjA4Ny0uODM1bDEuODIzLTYuODQxYTEuMTI1IDEuMTI1IDAgMCAwLTEuMDg3LTEuMzUySDYuMzc1TDUuMTc1IDQuNWgtMS41eiIgLz4KPC9zdmc+Cg==",
+      "type": "image/svg+xml",
       "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
-      "src": "/icons/icon-512x512.png",
-      "type": "image/png",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iIzA1OTY2OSI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMjIuNSAzSDFsMS4zODYgLjk1NUwxLjA4NyAuODM1bC4zODMgMS40MzdNNy41IDE0LjI1YTMgMyAwIDAgMC0zIDNoMTUuNzVtLTEyLjc1LTNoMTEuMjE4Yy41MSAwIC45NjItLjM0NCAxLjA4Ny0uODM1bDEuODIzLTYuODQxYTEuMTI1IDEuMTI1IDAgMCAwLTEuMDg3LTEuMzUySDYuMzc1TDUuMTc1IDQuNWgtMS41eiIgLz4KPC9zdmc+Cg==",
+      "type": "image/svg+xml",
       "sizes": "512x512",
       "purpose": "any maskable"
     }
