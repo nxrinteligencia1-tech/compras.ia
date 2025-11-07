@@ -1,0 +1,5 @@
+{
+  "name": "compras.ia",
+  "description": "Um bloco de notas simples e minimalista para sua lista de compras. Adicione, marque como comprado e remova itens com facilidade.",
+  "requestFramePermissions": []
+}
