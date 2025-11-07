@@ -4,13 +4,13 @@
   "description": "Um bloco de notas simples e minimalista para sua lista de compras. Adicione, marque como comprado e remova itens com facilidade.",
   "icons": [
     {
-      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjMyIiBmaWxsPSIjMDU5NjY5Ii8+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjEyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik0yOCAzOGgxNi41MWM1LjI5IDAgOS44OCAzLjU1IDExLjIzIDguNjNsMTcuNDEgNjUuMjdoODIuMTZjNS4yOSAwIDkuODgtMy41NSAxMS4yMy04LjYzbDE3LjQxLTY1LjI3SDYyIi8+PGNpcmNsZSBjeD0iNjgiIGN5PSIxNTQiIHI9IjEwIiBmaWxsPSIjRkZGRkZGIi8+PGNpcmNsZSBjeD0iMTQ4IiBjeT0iMTU0IiByPSIxMCIgZmlsbD0iI0ZGRkZGRiIvPjwvc3ZnPg==",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjMyIiBmaWxsPSIjNEY0NkU1Ii8+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjEyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik0yOCAzOGgxNi41MWM1LjI5IDAgOS44OCAzLjU1IDExLjIzIDguNjNsMTcuNDEgNjUuMjdoODIuMTZjNS4yOSAwIDkuODgtMy41NSAxMS4yMy04LjYzbDE3LjQxLTY1LjI3SDYyIi8+PGNpcmNsZSBjeD0iNjgiIGN5PSIxNTQiIHI9IjEwIiBmaWxsPSIjRkZGRkZGIi8+PGNpcmNsZSBjeD0iMTQ4IiBjeT0iMTU0IiByPSIxMCIgZmlsbD0iI0ZGRkZGRiIvPjwvc3ZnPg==",
       "type": "image/svg+xml",
       "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
-      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9Ijg1IiBmaWxsPSIjMDU5NjY5Ii8+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjMyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik03NSAxMDFoNDQuMDJjMTQuMSAwIDI2LjM0IDkuNDcgMjkuOTQgMjMuMDFsNDYuNDIgMTc0LjA4aDIxOS4wOWMxNC4xIDAgMjYuMzQtOS40NyAyOS45NC0yMy4wMWw0Ni40Mi0xNzQuMDhIMTY1Ii8+PGNpcmNsZSBjeD0iMTgxIiBjeT0iNDExIiByPSIyNyIgZmlsbD0iI0ZGRkZGRiIvPjxjaXJjbGUgY3g9IjM5NSIgY3k9IjQxMSIgcj0iMjciIGZpbGw9IiNGRkZGRkYiLz48L3N2Zz4=",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9Ijg1IiBmaWxsPSIjNEY0NkU1Ii8+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjMyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik03NSAxMDFoNDQuMDJjMTQuMSAwIDI2LjM0IDkuNDcgMjkuOTQgMjMuMDFsNDYuNDIgMTc0LjA4aDIxOS4wOWMxNC4xIDAgMjYuMzQtOS40NyAyOS45NC0yMy4wMWw0Ni40Mi0xNzQuMDhIMTY1Ii8+PGNpcmNsZSBjeD0iMTgxIiBjeT0iNDExIiByPSIyNyIgZmlsbD0iI0ZGRkZGRiIvPjxjaXJjbGUgY3g9IjM5NSIgY3k9IjQxMSIgcj0iMjciIGZpbGw9IiNGRkZGRkYiLz48L3N2Zz4=",
       "type": "image/svg+xml",
       "sizes": "512x512",
       "purpose": "any maskable"
@@ -19,5 +19,5 @@
   "start_url": ".",
   "display": "standalone",
   "background_color": "#f1f5f9",
-  "theme_color": "#059669"
+  "theme_color": "#4F46E5"
 }
